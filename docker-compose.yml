@@ -1,0 +1,10 @@
+version: "2"
+services:
+  webserver:
+    image: someteam/acha
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./storage:/app/.acha
+      - ./ssh/acha_rsa:/root/.ssh/acha_rsa
+    command: --private-key /root/.ssh/acha_rsa
